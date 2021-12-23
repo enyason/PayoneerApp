@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".paymentmethods.PaymentMethodsFragment">
+    tools:context=".presentation.paymentmethods.PaymentMethodsFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
@@ -12,7 +12,10 @@
         android:layout_height="?android:actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="#018B3A"
+        app:title="@string/payment_methods" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

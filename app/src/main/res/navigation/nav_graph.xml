@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/paymentMethodsFragment"
-        android:name="com.enyason.payoneerapp.paymentmethods.PaymentMethodsFragment"
+        android:name="com.enyason.payoneerapp.presentation.paymentmethods.PaymentMethodsFragment"
         android:label="payment_methods_fragment"
         tools:layout="@layout/payment_methods_fragment" />
 </navigation>

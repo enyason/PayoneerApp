@@ -1,4 +1,4 @@
-package com.enyason.payoneerapp.paymentmethods;
+package com.enyason.payoneerapp.presentation.paymentmethods;
 
 import android.os.Bundle;
 
@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.enyason.payoneerapp.R;
 import com.enyason.payoneerapp.databinding.PaymentMethodsFragmentBinding;
 
 

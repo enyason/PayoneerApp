@@ -1,4 +1,4 @@
-package com.enyason.payoneerapp;
+package com.enyason.payoneerapp.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
