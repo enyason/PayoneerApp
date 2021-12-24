@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Payment {
-    public String reference;
-    public int amount;
-    public String currency;
+    private String reference;
+    private int amount;
+    private String currency;
 }

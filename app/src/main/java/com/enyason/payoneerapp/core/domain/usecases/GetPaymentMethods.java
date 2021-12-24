@@ -1,16 +1,42 @@
 package com.enyason.payoneerapp.core.domain.usecases;
 
-import com.enyason.payoneerapp.core.domain.Result;
+import android.os.Build;
+import androidx.annotation.RequiresApi;
+import com.enyason.payoneerapp.core.api.PayoneerApi;
+import com.enyason.payoneerapp.core.domain.PaymentMethod;
+import java.util.ArrayList;
+import java.util.List;
+import javax.inject.Inject;
+import io.reactivex.rxjava3.core.Single;
+
+
+
 
 interface GetPaymentMethods {
-    Result<String> execute();
+    Single<List<PaymentMethod>> execute();
 }
 
 
 class GetPaymentMethodsImpl implements GetPaymentMethods {
 
+    @Inject
+    PayoneerApi api;
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
-    public Result<String> execute() {
-        return Result.success("");
+    public Single<List<PaymentMethod>> execute() {
+        return api.getPaymentMethods()
+                .map(paymentMethodsResponse -> paymentMethodsResponse.getNetworks().getApplicable())
+                .map(applicables -> {
+                            List<PaymentMethod> list = new ArrayList<>();
+                            applicables.forEach(applicable -> list.add(new PaymentMethod(
+                                    applicable.getCode(),
+                                    applicable.getLabel(),
+                                    applicable.getLinks().getLogo()
+                            )));
+
+                            return list;
+                        }
+                );
     }
 }

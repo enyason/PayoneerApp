@@ -7,5 +7,5 @@ import lombok.Data;
 
 @Data
 public class Networks {
-    public List<Applicable> applicable;
+    private List<Applicable> applicable;
 }

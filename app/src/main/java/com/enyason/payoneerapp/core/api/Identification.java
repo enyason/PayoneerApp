@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Identification {
-    public String longId;
-    public String shortId;
-    public String transactionId;
+    private String longId;
+    private String shortId;
+    private String transactionId;
 }

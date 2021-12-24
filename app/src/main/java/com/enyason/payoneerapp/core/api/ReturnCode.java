@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class ReturnCode {
-    public String name;
-    public String source;
+    private String name;
+    private String source;
 }

@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class Status {
-    public String code;
-    public String reason;
+    private String code;
+    private String reason;
 }

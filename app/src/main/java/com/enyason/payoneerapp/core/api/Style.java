@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class Style {
-    public String language;
+    private String language;
 }

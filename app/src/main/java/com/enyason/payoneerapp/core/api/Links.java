@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class Links{
-    public String self;
-    public String lang;
-    public String logo;
-    public String operation;
-    public String validation;
+    private String self;
+    private String lang;
+    private String logo;
+    private String operation;
+    private String validation;
 }
