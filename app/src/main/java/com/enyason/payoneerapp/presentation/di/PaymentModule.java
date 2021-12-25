@@ -13,5 +13,5 @@ import dagger.hilt.android.components.ViewModelComponent;
 public abstract class PaymentModule {
 
     @Binds
-    public abstract GetPaymentMethods bindAnalyticsService(GetPaymentMethodsImpl analyticsServiceImpl);
+    public abstract GetPaymentMethods bindGetPaymentMethods(GetPaymentMethodsImpl getPaymentMethodsImpl);
 }

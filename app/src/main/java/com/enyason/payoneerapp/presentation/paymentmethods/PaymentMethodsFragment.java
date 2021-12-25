@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.enyason.payoneerapp.databinding.PaymentMethodsFragmentBinding;
@@ -45,8 +47,8 @@ public class PaymentMethodsFragment extends Fragment {
             if (result.getStatus() == Result.Status.SUCCESS) {
                 adapter.submitList(result.getData());
             } else if (result.getStatus() == Result.Status.ERROR) {
-                Toast.makeText(requireContext(), result.getMessage(), Toast.LENGTH_SHORT).show();
-                //TODO show dialog
+                NavDirections directions = PaymentMethodsFragmentDirections.toErrorDialogFragment(result.getMessage());
+                Navigation.findNavController(binding.getRoot()).navigate(directions);
             }
         });
     }

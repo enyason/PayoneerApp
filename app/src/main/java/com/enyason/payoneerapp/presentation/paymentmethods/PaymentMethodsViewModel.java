@@ -33,7 +33,7 @@ public class PaymentMethodsViewModel extends ViewModel {
     }
 
     @Inject
-    private PaymentMethodsViewModel(GetPaymentMethods getPaymentMethods, Scheduler scheduler) {
+    PaymentMethodsViewModel(GetPaymentMethods getPaymentMethods, Scheduler scheduler) {
         this.getPaymentMethods = getPaymentMethods;
         this.scheduler = scheduler;
     }

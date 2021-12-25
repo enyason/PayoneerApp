@@ -18,9 +18,10 @@
         app:title="@string/payment_methods" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
         android:id="@+id/paymentMethodListView"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
+        tools:listitem="@layout/layout_for_payment_method"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
 

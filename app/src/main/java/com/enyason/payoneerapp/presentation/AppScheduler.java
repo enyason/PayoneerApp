@@ -1,11 +1,17 @@
-package com.enyason.payoneerapp.common;
+package com.enyason.payoneerapp.presentation;
 
 import com.enyason.payoneerapp.common.Scheduler;
+
+import javax.inject.Inject;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class AppScheduler implements Scheduler {
+
+    @Inject
+    public AppScheduler() {
+    }
 
     @Override
     public io.reactivex.rxjava3.core.Scheduler io() {

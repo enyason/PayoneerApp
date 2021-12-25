@@ -16,8 +16,12 @@ import io.reactivex.rxjava3.core.Single;
 
 public class GetPaymentMethodsImpl implements GetPaymentMethods {
 
-    @Inject
     PayoneerApi api;
+
+    @Inject
+    public GetPaymentMethodsImpl(PayoneerApi api) {
+        this.api = api;
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override

@@ -21,7 +21,7 @@ public class PaymentMethodsAdapter extends ListAdapter<PaymentMethod, PaymentMet
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        LayoutForPaymentMethodBinding binding = LayoutForPaymentMethodBinding.inflate(inflater);
+        LayoutForPaymentMethodBinding binding = LayoutForPaymentMethodBinding.inflate(inflater, parent, false);
         return new ViewHolder(binding);
     }
 
