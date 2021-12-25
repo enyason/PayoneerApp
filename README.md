@@ -2,7 +2,7 @@
 
 
 ## About Project
-This project is a sample project for the Payoneer challenge. Basically, it fetches a list of payment methods from the server and displays them on the checlout screen.
+This project is a sample project for the Payoneer challenge. Basically, it fetches a list of payment methods from the server and displays them on the checkout screen.
 
 
 ## Screen Shots
