@@ -7,7 +7,8 @@
         <entry key="app/src/main/res/layout/layout_for_error_dialog.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/layout_for_payment_method.xml" value="0.45" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.23948717948717949" />
-        <entry key="app/src/main/res/layout/payment_methods_fragment.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/payment_methods_fragment.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/shimmer_loading_view.xml" value="0.335" />
       </map>
     </option>
   </component>

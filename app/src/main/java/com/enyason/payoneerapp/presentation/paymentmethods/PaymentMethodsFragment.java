@@ -51,5 +51,15 @@ public class PaymentMethodsFragment extends Fragment {
                 Navigation.findNavController(binding.getRoot()).navigate(directions);
             }
         });
+
+        viewModel.loadingObserver().observe(getViewLifecycleOwner(), showShimmer -> {
+            if (showShimmer) {
+                binding.shimmerViewContainer.startShimmer();
+                binding.shimmerViewContainer.setVisibility(View.VISIBLE);
+            } else {
+                binding.shimmerViewContainer.stopShimmer();
+                binding.shimmerViewContainer.setVisibility(View.GONE);
+            }
+        });
     }
 }

@@ -13,8 +13,11 @@ import com.enyason.payoneerapp.common.Result;
 import dagger.hilt.android.lifecycle.HiltViewModel;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.functions.Action;
+import io.reactivex.rxjava3.functions.Consumer;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
@@ -26,10 +29,15 @@ public class PaymentMethodsViewModel extends ViewModel {
 
     private final CompositeDisposable container = new CompositeDisposable();
 
-    private final MutableLiveData<Result<List<PaymentMethod>>> _paymentMethods = new MutableLiveData<>();
+    private final MutableLiveData<Result<List<PaymentMethod>>> paymentMethods = new MutableLiveData<>();
+    private final MutableLiveData<Boolean> loading = new MutableLiveData<>();
 
     public LiveData<Result<List<PaymentMethod>>> paymentMethodsObserver() {
-        return _paymentMethods;
+        return paymentMethods;
+    }
+
+    public LiveData<Boolean> loadingObserver() {
+        return loading;
     }
 
     @Inject
@@ -41,14 +49,16 @@ public class PaymentMethodsViewModel extends ViewModel {
     public void getPaymentMethods() {
         Disposable disposable = getPaymentMethods
                 .execute()
+                .delay(1, TimeUnit.SECONDS)
                 .subscribeOn(scheduler.io())
                 .observeOn(scheduler.main())
+                .doOnSubscribe(disposable1 -> loading.setValue(true))
+                .doOnTerminate(() -> loading.setValue(false))
                 .doOnError(throwable -> {
                     String message = ErrorUtils.extractErrorMessage(throwable);
-                    _paymentMethods.postValue(Result.error(message));
-                }).doOnSuccess(paymentMethods -> {
-                    _paymentMethods.postValue(Result.success(paymentMethods));
-                }).subscribe();
+                    paymentMethods.postValue(Result.error(message));
+                }).doOnSuccess(paymentMethodList -> paymentMethods.postValue(Result.success(paymentMethodList)))
+                .subscribe();
 
         container.add(disposable);
     }
