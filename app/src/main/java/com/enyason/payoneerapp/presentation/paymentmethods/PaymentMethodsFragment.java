@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,8 +13,8 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.enyason.payoneerapp.databinding.PaymentMethodsFragmentBinding;
 import com.enyason.payoneerapp.common.Result;
+import com.enyason.payoneerapp.databinding.PaymentMethodsFragmentBinding;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -33,6 +32,7 @@ public class PaymentMethodsFragment extends Fragment {
         binding = PaymentMethodsFragmentBinding.inflate(inflater);
         viewModel = new ViewModelProvider(this).get(PaymentMethodsViewModel.class);
         viewModel.getPaymentMethods();
+        binding.materialToolbar.setNavigationOnClickListener(view -> requireActivity().finish());
         return binding.getRoot();
     }
 

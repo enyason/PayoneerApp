@@ -13,11 +13,8 @@ import com.enyason.payoneerapp.common.Result;
 import dagger.hilt.android.lifecycle.HiltViewModel;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
-import io.reactivex.rxjava3.functions.Action;
-import io.reactivex.rxjava3.functions.Consumer;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
@@ -49,16 +46,14 @@ public class PaymentMethodsViewModel extends ViewModel {
     public void getPaymentMethods() {
         Disposable disposable = getPaymentMethods
                 .execute()
-                .delay(1, TimeUnit.SECONDS)
                 .subscribeOn(scheduler.io())
                 .observeOn(scheduler.main())
-                .doOnSubscribe(disposable1 -> loading.setValue(true))
-                .doOnTerminate(() -> loading.setValue(false))
-                .doOnError(throwable -> {
+                .doOnSubscribe(disposable1 -> loading.postValue(true))
+                .doOnTerminate(() -> loading.postValue(false))
+                .subscribe(paymentMethodList -> paymentMethods.postValue(Result.success(paymentMethodList)), throwable -> {
                     String message = ErrorUtils.extractErrorMessage(throwable);
                     paymentMethods.postValue(Result.error(message));
-                }).doOnSuccess(paymentMethodList -> paymentMethods.postValue(Result.success(paymentMethodList)))
-                .subscribe();
+                });
 
         container.add(disposable);
     }

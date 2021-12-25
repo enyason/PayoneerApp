@@ -13,18 +13,12 @@ import com.enyason.payoneerapp.databinding.LayoutForErrorDialogBinding;
 
 public class ErrorDialogFragment extends DialogFragment {
 
-    private LayoutForErrorDialogBinding binding;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = LayoutForErrorDialogBinding.inflate(inflater);
+        LayoutForErrorDialogBinding binding = LayoutForErrorDialogBinding.inflate(inflater);
+        String errorMessage = ErrorDialogFragmentArgs.fromBundle(getArguments()).getMessage();
+        binding.errorMsg.setText(errorMessage);
         return binding.getRoot();
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
     }
 }

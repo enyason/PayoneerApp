@@ -20,11 +20,9 @@
         android:name="com.enyason.payoneerapp.common.ui.ErrorDialogFragment"
         android:label="ErrorDialogFragment">
 
-
         <argument
             android:name="message"
             app:argType="string" />
     </dialog>
-
 
 </navigation>
