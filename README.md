@@ -7,12 +7,12 @@ This project is a sample project for the Payoneer challenge. Basically, it fetch
 
 ## Screen Shots
 
-<img src="https://user-images.githubusercontent.com/20507280/147390648-31b407a6-29d7-4e4e-8349-fb2be2eae497.png
-" width="320" height="680"> <img src="https://user-images.githubusercontent.com/20507280/147390661-a07ad7e0-f9fa-4d73-96cb-214eb24346b1.png
+<img src="https://github.com/enyason/PayoneerApp/blob/master/Screenshot_20211225_184348.png
+" width="320" height="680"> <img src="https://github.com/enyason/PayoneerApp/blob/master/Screenshot_20211225_184010.png
 " width="320" height="680">
 
-<img src="https://user-images.githubusercontent.com/20507280/147390687-7cd8a255-ac1b-4915-8e09-807e35a0c0d8.png
-" width="320" height="680"> <img src="https://user-images.githubusercontent.com/20507280/147390697-f5190330-1e16-4581-a565-6f3eb285b9ad.png
+<img src="https://github.com/enyason/PayoneerApp/blob/master/Screenshot_20211225_184023.png
+" width="320" height="680"> <img src="https://github.com/enyason/PayoneerApp/blob/master/Screenshot_20211225_184052.png
 " width="320" height="680">
 
 
