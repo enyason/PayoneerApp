@@ -1,4 +1,4 @@
-package com.enyason.payoneerapp.core.domain;
+package com.enyason.payoneerapp.common;
 
 import javax.annotation.Nullable;
 
@@ -27,8 +27,8 @@ public class Result<T> {
         return new Result<>(Status.SUCCESS, data, "Successful");
     }
 
-    public static Result<Throwable> error(Throwable data) {
-        return new Result<>(Status.ERROR, data, "Successful");
+    public static <T>Result<T> error(String error) {
+        return new Result<>(Status.ERROR, null, error);
     }
 
     public enum Status {ERROR, SUCCESS}

@@ -12,31 +12,8 @@ import io.reactivex.rxjava3.core.Single;
 
 
 
-interface GetPaymentMethods {
+public interface GetPaymentMethods {
     Single<List<PaymentMethod>> execute();
 }
 
 
-class GetPaymentMethodsImpl implements GetPaymentMethods {
-
-    @Inject
-    PayoneerApi api;
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    @Override
-    public Single<List<PaymentMethod>> execute() {
-        return api.getPaymentMethods()
-                .map(paymentMethodsResponse -> paymentMethodsResponse.getNetworks().getApplicable())
-                .map(applicables -> {
-                            List<PaymentMethod> list = new ArrayList<>();
-                            applicables.forEach(applicable -> list.add(new PaymentMethod(
-                                    applicable.getCode(),
-                                    applicable.getLabel(),
-                                    applicable.getLinks().getLogo()
-                            )));
-
-                            return list;
-                        }
-                );
-    }
-}
