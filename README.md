@@ -7,13 +7,9 @@ This project is a sample project for the Payoneer challenge. Basically, it fetch
 
 ## Screen Shots
 
-<img src="https://github.com/enyason/PayoneerApp/blob/master/Screenshot_20211225_184348.png
-" width="320" height="680"> <img src="https://github.com/enyason/PayoneerApp/blob/master/Screenshot_20211225_184010.png
-" width="320" height="680">
+<img src="https://github.com/enyason/PayoneerApp/blob/master/Screenshot_20211225_184348.png" width="320" height="680"> <img src="https://github.com/enyason/PayoneerApp/blob/master/Screenshot_20211225_184010.png" width="320" height="680">
 
-<img src="https://github.com/enyason/PayoneerApp/blob/master/Screenshot_20211225_184023.png
-" width="320" height="680"> <img src="https://github.com/enyason/PayoneerApp/blob/master/Screenshot_20211225_184052.png
-" width="320" height="680">
+<img src="https://github.com/enyason/PayoneerApp/blob/master/Screenshot_20211225_184023.png" width="320" height="680"> <img src="https://github.com/enyason/PayoneerApp/blob/master/Screenshot_20211225_184052.png" width="320" height="680">
 
 
 ## Technology Stack
