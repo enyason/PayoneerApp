@@ -9,5 +9,22 @@
         android:id="@+id/paymentMethodsFragment"
         android:name="com.enyason.payoneerapp.presentation.paymentmethods.PaymentMethodsFragment"
         android:label="payment_methods_fragment"
-        tools:layout="@layout/payment_methods_fragment" />
+        tools:layout="@layout/payment_methods_fragment">
+        <action
+            android:id="@+id/toErrorDialogFragment"
+            app:destination="@id/errorDialogFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/errorDialogFragment"
+        android:name="com.enyason.payoneerapp.common.ui.ErrorDialogFragment"
+        android:label="ErrorDialogFragment">
+
+
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </dialog>
+
+
 </navigation>
